@@ -56,6 +56,11 @@ pwcheck_method: auxprop
 auxprop_plugin: sasldb
 mech_list: PLAIN LOGIN CRAM-MD5 DIGEST-MD5 NTLM
 EOF
+
+if [[ -z "$smtp_user" ]]; then
+  exit 0
+fi
+
 # sasldb2
 echo $smtp_user | tr , \\n > /tmp/passwd
 while IFS=':' read -r _user _pwd; do
