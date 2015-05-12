@@ -4,6 +4,7 @@ MAINTAINER Dennis Clark <boomfish@gmail.com>
 
 # Replace install.sh on base image
 COPY install.sh /opt/install.sh
+RUN chmod u+x /opt/install.sh
 
 EXPOSE 25
 
